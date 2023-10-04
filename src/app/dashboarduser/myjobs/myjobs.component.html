@@ -1,0 +1,40 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- <th>ID</th> -->
+        <th>Name</th>
+        <th>Email</th>
+        <th>Education</th>
+        <th>Experience</th>
+        <th>Location</th>
+        <th>Resume</th>
+        <th>Java Experience</th>
+        <th>JSP Experience</th>
+        <th>Interview Date</th>
+        <th>Java Valid</th>
+        <th>Job Title</th>
+        <th>Company Name</th>
+        <!-- Add more table headers for other properties -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let application of data">
+        <!-- <td>{{ application.juid }}</td> -->
+        <td>{{ application.juname }}</td>
+        <td>{{ application.jumail }}</td>
+        <td>{{ application.jueducation }}</td>
+        <td>{{ application.juexperience }}</td>
+        <td>{{ application.jurelocation }}</td>
+        <td>{{ application.juresume }}</td>
+        <td>{{ application.juexpinjava }}</td>
+        <td>{{ application.juexpjsp }}</td>
+        <td>{{ application.juinterviewdate }}</td>
+        <td>{{ application.jujavavalid }}</td>
+        <td>{{ application.jujobtitle }}</td>
+        <td>{{ application.jucompanyname }}</td>
+        <!-- Add more table cells for other properties -->
+      </tr>
+    </tbody>
+  </table>
+</div>

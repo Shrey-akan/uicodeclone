@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 class="mt-5">Job Applications</h2>
+  <div class="row" *ngFor="let application of data">
+    <!-- <div class="col-md-4" *ngFor="let application of data"> -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ application.juname }}</h5>
+          <p class="card-text">{{ application.jumail }}</p>
+          <p class="card-text">{{ application.jucompny }}</p>
+          <button class="btn btn-primary" (click)="showMoreInfo(application)">More Info</button>
+        </div>
+        <div class="card-footer" *ngIf="expandedUser === application">
+          <p class="card-text"><strong>Location:</strong> {{ application.jurelocation }}</p>
+          <p class="card-text"><strong>Education:</strong> {{ application.jueducation }}</p>
+          <p class="card-text"><strong>Experience:</strong> {{ application.juexperience }}</p>
+          <p class="card-text"><strong>Java Experience:</strong> {{ application.juexpinjava }}</p>
+          <p class="card-text"><strong>JSP Experience:</strong> {{ application.juexpjsp }}</p>
+          <p class="card-text"><strong>Interview Date:</strong> {{ application.juinterviewdate }}</p>
+          <p class="card-text"><strong>Java Valid:</strong> {{ application.jujavavalid }}</p>
+          <p class="card-text"><strong>Job Title:</strong> {{ application.jujobtitle }}</p>
+          <p class="card-text"><strong>Company Name:</strong> {{ application.jucompanyname }}</p>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+</div>

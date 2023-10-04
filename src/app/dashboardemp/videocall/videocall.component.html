@@ -1,0 +1,58 @@
+<!-- video-call.component.html -->
+
+<div class="video-call-container">
+  <div class="video-area">
+    <!-- Remote Video Element-->
+    <div class="remote-video">
+      <video id="remote-video" autoplay muted></video>
+      <div class="participant-name">Participant 1</div>
+    </div>
+
+    <!-- Local Video Element-->
+    <div class="local-video">
+      <video id="local-video" autoplay></video>
+      <div class="participant-name">You</div>
+    </div>
+  </div>
+
+  <div class="controls-area">
+    <div class="top-controls">
+      <h1 class="meeting-title">Meeting Title</h1>
+      <div class="meeting-status">Connected</div>
+    </div>
+
+    <div class="bottom-controls">
+      <div class="participants-list">
+        <h2>Participants</h2>
+        <ul>
+          <li>Participant 1</li>
+          <li>Participant 2</li>
+          <!-- Add more participants dynamically -->
+        </ul>
+      </div>
+
+      <div class="chat-panel">
+        <h2>Chat</h2>
+        <div class="chat-container">
+    
+      
+          <div class="chat-messages">
+            <!-- Display received and sent messages here -->
+            <div *ngFor="let message of messages"
+              class="message {{ message.messageFrom === message.messageTo ? 'sent' : 'received' }}">
+              <div class="message-content">{{ message.message }}</div>
+            </div>
+          </div>
+      
+          <form [formGroup]="messageForm" (ngSubmit)="sendMessage()" class="message-form">
+            <div class="form-group">
+              <textarea id="message" formControlName="message" placeholder="Type your message..." required
+                class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

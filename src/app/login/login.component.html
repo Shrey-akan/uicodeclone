@@ -1,0 +1,34 @@
+<div class="container p-sm-5 p-md-4 p-lg-5 "
+  style="  background-image: url('assets/1 (2).jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; ">
+  <div class="row p-lg-5 p-sm-5 p-md-0 ">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="container">
+        <div class="card" style="padding: 20px;">
+          <form [formGroup]="loginform" (ngSubmit)="login(loginform)" action="">
+            <div class="form-group">
+              <input type="text" class="form-control mb-3" formControlName="userName" id="userName"
+                placeholder="Enter User Name (e.g., example@gmail.com)"
+                [ngClass]="{ 'is-invalid': loginform.get('userName')?.invalid && loginform.get('userName')?.touched }" />
+              <div class="invalid-feedback" *ngIf="loginform.get('userName')?.hasError('required')">
+                Username is required.
+              </div>
+              <div class="invalid-feedback" *ngIf="loginform.get('userName')?.hasError('pattern')">
+                Username must end with '@gmail.com'.
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control mb-3" formControlName="userPassword" id="userPassword"
+                placeholder="Enter Password" />
+            </div>
+            <a class="nav-link active" aria-current="page" routerLink="/resetpass" style="color: red">Forgot Password</a>
+            <input type="submit" value="Login" class="btn btn-outline-primary form-control rounded-0" />
+            <a class="nav-link active" aria-current="page" style="margin: 5px 0px;" routerLink="/register">Register
+              user</a>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

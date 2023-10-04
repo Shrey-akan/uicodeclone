@@ -1,0 +1,33 @@
+
+  
+  /* Add any other styles you need to customize the footer appearance */
+  i{
+    cursor: pointer;
+  }
+
+
+  /* Add animations */
+footer {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+footer:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Style the social media icons */
+footer ul.list-unstyled li i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Add hover effect to social media links */
+footer ul.list-unstyled li a {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+footer ul.list-unstyled li a:hover {
+  color: #007bff;
+}

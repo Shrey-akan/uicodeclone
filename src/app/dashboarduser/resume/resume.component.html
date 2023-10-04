@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form [formGroup]="resumeForm" (ngSubmit)="submitresume()">
+          <div class="form-group">
+            <label for="rname">Name:</label>
+            <input type="text" id="rname" name="rname" formControlName="rname" class="form-control" />
+          </div>
+          
+          <div class="form-group">
+            <label for="rmail">Email:</label>
+            <input type="text" id="rmail" name="rmail" formControlName="rmail" class="form-control" />
+          </div>
+          
+          <div class="form-group">
+            <label for="rphone">Phone:</label>
+            <input type="text" id="rphone" name="rphone" formControlName="rphone" class="form-control" />
+          </div>
+          
+          <div class="form-group">
+            <label for="experience">Experience:</label>
+            <input type="text" id="experience" name="experience" formControlName="experience" class="form-control" />
+          </div>
+          
+          <div class="form-group">
+            <label for="skills">Skills:</label>
+            <input type="text" id="skills" name="skills" formControlName="skills" class="form-control" />
+          </div>
+          
+          <div class="form-group">
+            <label for="projectlink">Project Link:</label>
+            <input type="text" id="projectlink" name="projectlink" formControlName="projectlink" class="form-control" />
+          </div>
+          
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" formControlName="description" class="form-control"></textarea>
+          </div>
+          
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

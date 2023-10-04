@@ -1,0 +1,13 @@
+/* your-component.css */
+.custom-button {
+    background-color: #FF5733;
+    color: white;
+    border: none;
+  }
+  .custom-button:hover {
+    background-color: #E64A2E;
+  }
+  .error {
+    border: 1px solid red;
+  }
+  

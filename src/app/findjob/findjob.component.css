@@ -1,0 +1,11 @@
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: blue;
+    border: 2px solid burlywood;
+}
+.concom:hover{
+    border-left: 1px solid blueviolet;
+
+}

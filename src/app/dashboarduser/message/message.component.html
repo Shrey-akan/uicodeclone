@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Messages</h2>
+  <div class="row">
+    <!-- User List Column -->
+    <div class="col-md-4">
+      <div class="user-list">
+        <h3>Employer</h3>
+        <div *ngFor="let message of messages" class="messageFrom" (click)="selectUser(message.messageFrom)">
+          {{ message.messageFrom }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Column -->
+    <div class="col-md-8">
+      <div class="message-container">
+        <h3 *ngIf="selectedUser">Messages from {{ selectedUser }}</h3>
+        <div class="messages-list-container">
+          <div class="messages-list">
+            <div *ngFor="let message of filteredMessages" class="message">
+              <div class="message-content">
+                <div class="message-text">{{ message.message }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Send Message Form -->
+      <div class="send-message-form" *ngIf="selectedUser">
+        <form (submit)="sendMessage()">
+          <div class="input-group">
+            <textarea [(ngModel)]="newMessage" name="newMessage" class="form-control" placeholder="Type your message..." required></textarea>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<div class="container shadow">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <div class="col">
+          <h2 class="text-dark text-center"><b>Create A Job Post</b></h2>
+        </div>
+        <div class="col text-center">
+          <img src="/assets/pictureindeed-removebg-preview.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h2>Jobs Details</h2>
+  <form [formGroup]="jobdetail" (ngSubmit)="jobdetailsform(jobdetail)">
+    <div class="mb-3">
+      <label for="jobtitle" class="form-label">Job Title*</label>
+      <input type="text" class="form-control" id="jobtitle" formControlName="jobtitle" required>
+      <div *ngIf="jobdetail.get('jobtitle')?.hasError('required')" class="text-danger">
+        Job Title is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="companyforthisjob" class="form-label">Company for this job *</label>
+      <input type="text" class="form-control" id="companyforthisjob" formControlName="companyforthisjob" required>
+      <div *ngIf="jobdetail.get('companyforthisjob')?.hasError('required')" class="text-danger">
+        Company for this job is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="numberofopening" class="form-label">Number of Openings *</label>
+      <input type="number" class="form-control" id="numberofopening" formControlName="numberofopening" required>
+      <div *ngIf="jobdetail.get('numberofopening')?.hasError('required')" class="text-danger">
+        Number of Openings is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="locationjob" class="form-label">Location</label>
+      <input type="text" class="form-control" id="locationjob" formControlName="locationjob">
+    </div>
+    <div class="mb-3">
+      <label for="jobtype" class="form-label">Job type</label>
+      <input type="text" class="form-control" id="jobtype" formControlName="jobtype">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Schedule *</label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="morningShift"
+          value="Morning Shift"
+          formControlName="schedulejob"
+        />
+        <label class="form-check-label" for="morningShift">Morning Shift</label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="nightShift"
+          value="Night Shift"
+          formControlName="schedulejob"
+        />
+        <label class="form-check-label" for="nightShift">Night Shift</label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="dayNightShift"
+          value="Day-Night Shift"
+          formControlName="schedulejob"
+        />
+        <label class="form-check-label" for="dayNightShift">Day-Night Shift</label>
+      </div>
+      <!-- Add more schedule options as needed -->
+      <div *ngIf="jobdetail.get('schedulejob')?.hasError('required')" class="text-danger">
+        Schedule is required.
+      </div>
+    </div>
+    
+    
+    <div class="mb-3">
+      <label for="payjob" class="form-label">Pay *</label>
+      <input type="text" class="form-control" id="payjob" formControlName="payjob" required>
+      <div *ngIf="jobdetail.get('payjob')?.hasError('required')" class="text-danger">
+        Pay is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="payjobsup" class="form-label">Supplemental Pay *</label>
+      <input type="text" class="form-control" id="payjobsup" formControlName="payjobsup" required>
+      <div *ngIf="jobdetail.get('payjobsup')?.hasError('required')" class="text-danger">
+        Supplemental Pay is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="descriptiondata" class="form-label">Description</label>
+      <textarea class="form-control" id="descriptiondata" formControlName="descriptiondata"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Continue</button>
+  </form>
+</div>
